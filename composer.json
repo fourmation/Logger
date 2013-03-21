@@ -1,0 +1,25 @@
+{
+    "name": "fourmation/logger",
+    "description": "This is a zf2 logging module that allows posting via: View Helpers, Controller Plugins, Ajax and Service Manager calls.",
+    "keywords": ["logger", "log", "zend-framework", "zf2", "ajax", "view helper", "controller plugin", "service manager"],
+    "homepage": "https://github.com/fourmation/Logger",
+    "type": "library",
+    "license": "New BSD License",
+    "authors": [
+        {
+            "name": "Aaron Weathearll",
+            "email": "aaron@4mation.com.au"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "logger": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
