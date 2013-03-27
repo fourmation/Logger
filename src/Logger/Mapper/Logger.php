@@ -229,7 +229,7 @@ Class Logger
      *
      * @return $this
      */
-    public function messageType(string $type)
+    public function messageType($type)
     {
         $this->getEntity()->setCommentType($type);
 
@@ -241,7 +241,7 @@ Class Logger
      *
      * @return $this
      */
-    public function author(string $author)
+    public function author($author)
     {
         $this->getEntity()->setAuthor($author);
 
