@@ -29,6 +29,11 @@ class Logger
      * @var
      */
     protected $comment;
+    
+     /**
+     * @var
+     */
+    protected $author;
 
     /**
      * @var string
@@ -146,6 +151,24 @@ class Logger
     public function getLinkTable()
     {
         return $this->linkTable;
+    }
+    
+    /**
+     * @param $linkTable
+     * @return $this
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 
 }

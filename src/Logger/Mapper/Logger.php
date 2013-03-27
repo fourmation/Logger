@@ -235,6 +235,18 @@ Class Logger
 
         return $this;
     }
+    
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function author(string $author)
+    {
+        $this->getEntity()->setAuthor($author);
+
+        return $author;
+    }
 
     /**
      * @param $linkType
