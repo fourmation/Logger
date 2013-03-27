@@ -245,7 +245,7 @@ Class Logger
     {
         $this->getEntity()->setAuthor($author);
 
-        return $author;
+        return $this;
     }
 
     /**
