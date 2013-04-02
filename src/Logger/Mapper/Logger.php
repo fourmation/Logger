@@ -77,6 +77,21 @@ Class Logger
         return $this->getResult($sql, $select, false);
     }
 
+    public function reset()
+    {
+        $entity = $this->getEntity();
+
+        $vars = get_class_methods(get_class($entity));
+
+        foreach ($vars as $key=>$value) {
+            if (substr($value, 0, 3) == 'set') {
+                $entity->$value(NULL);
+            }
+        };
+
+        return $this;
+    }
+
     /**
      * @param $id
      *
@@ -256,6 +271,7 @@ Class Logger
      */
     public function link($linkType, $linkId)
     {
+
         $this->getEntity()->setLinkTable($linkType);
         $this->getEntity()->setLinkId($linkId);
 
