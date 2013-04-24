@@ -57,7 +57,14 @@ Class Logger
         $this->isInitialized = true;
     }
 
-    public function find()
+    /**
+     * Find logs
+     * Options: order
+     *
+     * @param null $options
+     * @return array
+     */
+    public function find($options = null)
     {
         $this->initialize();
 
@@ -73,6 +80,10 @@ Class Logger
         $sql = NEW Sql($this->getAdapter());
         $select = $sql->select($this->getTableName());
         $select->where($values);
+
+        if (isset($options['order'])) {
+            $select->order($options['order']);
+        }
 
         return $this->getResult($sql, $select, false);
     }
